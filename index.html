@@ -2,14 +2,53 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Login Sistema Viação Asteroide</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
+    <!--
     <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
+    < All of the Node.js APIs are available in this renderer process. >
     We are using Node.js <script>document.write(process.versions.node)</script>,
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+    -->
+    <div id="container_login">
+      <div class="container_imagem">
+        <img id="logo" src="imagens/logo_symbol.png">
+      </div>
+      <div class="container_imagem">
+        <img id="logo" src="imagens/logo_ex.png">
+      </div>
+      <hr/>
+      <form method="post" action="index.html">
+        <table id="tbl_dados">
+          <tr>
+            <td>
+              <label>Login:</label>
+            </td>
+            <td>
+              <input type="text" name="txt_login"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Senha:</label>
+            </td>
+            <td>
+              <input type="password" name="txt_password"/>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">
+              <div id="btn_login">
+                <a id="a_btn" href="index.html">ENTRAR</a>
+              </div>
+            </th>
+          </tr>
+        </table>
+      </form>
+    </div>
 
     <script>
       // You can also require other files to run in this process
