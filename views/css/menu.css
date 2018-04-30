@@ -1,0 +1,57 @@
+*{
+  font-family: Arial;
+}
+
+body{
+  background-image: url('../../imagens/capa_login.jpg');
+  background-size: cover;
+}
+
+#tbl_menu{
+  width: 70%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 200px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  background-image: url('../../imagens/capa_login.jpg');
+  background-size: cover;
+}
+
+#tbl_menu td{
+  width: 33%;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.btn_menu img{
+  width: 100%;
+  height: 100%;
+}
+
+.btn_menu{
+
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  border: none;
+
+}
+
+.btn_menu a{
+
+  text-align: center;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+
+}
+
+.btn_menu:hover {
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
