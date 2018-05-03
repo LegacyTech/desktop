@@ -1,0 +1,66 @@
+*{
+  font-family: Arial;
+}
+
+body{
+  background-image: url('../../imagens/capa_login.jpg');
+  background-size: cover;
+  padding: 20px;
+}
+
+hr{
+  margin: 20px;
+}
+
+#container_voltar{
+  width: 65px;
+  margin: 0 auto;
+}
+
+#btn_voltar{
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+}
+
+#btn_voltar h1{
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+}
+
+#container_geral{
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#logo{
+  width: 50%;
+}
+
+#tbl_item{
+  width: 50%;
+  height: auto
+}
+
+#tbl_item td{
+  padding: 10px;
+}
+
+#tbl_item th{
+  padding: 10px;
+}
+
+input[type="text"]{
+  text-align: left;
+}
+
+input[type="submit"]{
+  width: 30%;
+  height: 30px;
+
+}
