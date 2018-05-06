@@ -1,0 +1,78 @@
+*{
+  font-family: Arial;
+}
+
+body{
+  background-image: url('../../imagens/capa_login.jpg');
+  background-size: cover;
+  padding: 20px;
+}
+
+#container_voltar{
+  width: 65px;
+  position: absolute;
+  float: right;
+  bottom: 0;
+}
+
+hr{
+  margin: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+#btn_voltar{
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+#btn_voltar h1{
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+}
+
+#container_geral{
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#logo{
+  width: 50%;
+}
+
+
+#tbl_viagens{
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  cursor: default;
+}
+
+#tbl_viagens tr{
+
+}
+
+#tbl_viagens td{
+  text-align: center;
+  padding: 10px;
+  border-bottom: solid 1px #ddd;
+}
+
+#tbl_viagens th{
+  background-color: #eee;
+  padding: 10px;
+}
+
+#tbl_viagens td:active{
+  background-color: #ddd;
+}
