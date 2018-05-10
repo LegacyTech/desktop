@@ -1,25 +1,17 @@
-const electron = require('electron')
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+ready( function(){
 
-const path = require('path')
-const url = require('url')
+  document.querySelector('#btn_deslogar').addEventListener('click', function(e){
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+    e.preventDefault();//Não deixa a tela piscar
 
-function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1000, height: 550 , resizable : true})
+    let sair = confirm("Deseja realmente deslogar?");
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'menu.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+    if( sair ){
+      //Limpa a sessão
+      sessionStorage.clear();
+      window.location.href = "./../index.html"; //Faz o redirecionamento
+    }
 
-}
+  });
+
+});

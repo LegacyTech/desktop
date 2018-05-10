@@ -4,55 +4,44 @@
     <meta charset="UTF-8">
     <title>Login Sistema Viação Asteroide</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="comuns.js"></script>
   </head>
   <body>
-    <!--
-    <h1>Hello World!</h1>
-    < All of the Node.js APIs are available in this renderer process. >
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-    -->
     <div id="container_login">
-      <div class="container_imagem">
-        <img id="logo" src="imagens/logo_symbol.png">
+      <div class="container_imagem" style="width : 30%">
+        <img id="logo_sim" src="imagens/logo_symbol.png" >
       </div>
       <div class="container_imagem">
-        <img id="logo" src="imagens/logo_ex.png">
+        <img id="logo_ex" src="imagens/logo_ex.png">
       </div>
-      <hr/>
-      <form method="post" action="index.html">
+      <form name="form" action="" id="form_login">
         <table id="tbl_dados">
           <tr>
             <td>
-              <label>Login:</label>
-            </td>
-            <td>
-              <input type="text" name="txt_login"/>
+              <label>CPF:</label>
+              <input type="text" id="txt_login" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="15"/>
             </td>
           </tr>
           <tr>
             <td>
               <label>Senha:</label>
-            </td>
-            <td>
-              <input type="password" name="txt_password"/>
+              <input type="password" id="txt_password" maxlength="255"/>
             </td>
           </tr>
           <tr>
             <th colspan="2">
-              <div id="btn_login">
-                <a id="a_btn" href="views/menu.html">ENTRAR</a>
-              </div>
+              <button id="btn_login" type="button">
+                Entrar
+              </button>
             </th>
           </tr>
         </table>
       </form>
     </div>
-
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      require('./renderer.js');
+
     </script>
   </body>
 </html>

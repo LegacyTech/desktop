@@ -2,9 +2,13 @@
   <head>
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <title>Menu - Viação Asteroide</title>
+    <script src="./../comuns.js"></script>
   </head>
   <body>
-
+    <script>
+      console.log( "idUsuario : " +  sessionStorage.getItem("idUsuario") );
+      console.log( "Nivel : " +  sessionStorage.getItem("nivel") );
+    </script>
     <table id="tbl_menu">
       <tr>
         <td>
@@ -24,9 +28,14 @@
         </td>
       </tr>
     </table>
-
+    <div id="container_deslogar">
+      <a id="btn_deslogar" href="#">
+       <img src="./../imagens/exit.png"/>
+       <h1> Sair </h1>
+     </a>
+   </div>
   <script>
-    require('./js/menu_renderer.js')
+    require('./js/menu_renderer')
   </script>
   </body>
 </html>
