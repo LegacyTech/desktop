@@ -10,9 +10,7 @@ body{
 
 #container_voltar{
   width: 65px;
-  position: absolute;
-  float: right;
-  bottom: 0;
+  margin: 0 auto;
 }
 
 hr{
@@ -26,7 +24,7 @@ h1{
 #btn_voltar{
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 #btn_voltar h1{

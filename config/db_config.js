@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
   user: 'root',
   password: 'bcd127',
   database: 'db_viacao_asteroide'
-  
+
 });
 
 //Realiza a conexao e verifica se foi logado
