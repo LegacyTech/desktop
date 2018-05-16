@@ -20,6 +20,7 @@
     "electron": "^1.8.4"
   },
   "dependencies": {
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "vue": "^2.5.16"
   }
 }
