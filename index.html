@@ -8,9 +8,6 @@
   </head>
   <body>
     <div id="container_login">
-      <h1 id="teste">
-        {{messagem}}
-      </h1>
       <div class="container_imagem" style="width : 30%">
         <img id="logo_sim" src="imagens/logo_symbol.png" >
       </div>
@@ -22,7 +19,7 @@
           <tr>
             <td>
               <label>CPF:</label>
-              <input type="text" id="txt_login" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="15"/>
+              <input type="text" id="txt_login" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14"/>
             </td>
           </tr>
           <tr>
@@ -44,15 +41,6 @@
     <script>
       // You can also require other files to run in this process
       require('./renderer.js');
-      var Vue  = require('./vue.js');
-
-      new Vue ({
-        el : '#teste',
-        data :
-        {
-          messagem : "Olá"
-        }
-      });
     </script>
   </body>
 </html>

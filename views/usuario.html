@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody id="dados">
-          <tr v-for="usuario in usuarios">
+          <tr v-for="(usuario , index) in usuarios">
             <td >
               {{usuario.nome}}
             </td>
@@ -40,15 +40,15 @@
               {{usuario.cpf}}
             </td>
             <td >
-              {{usuario.nivel}}
+              {{usuario.nomeNivel}}
             </td>
             <td >
-              <a href="#">
+              <a href="#"  @click.prevent="showModal = true">
                 <img src="./../imagens/eye.png">
               </a>
             </td>
             <td>
-              <a href="#">
+              <a href="#" @click.prevent="remover(index)">
                 <img src="./../imagens/remove.png">
               </a>
             </td>

@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/addUsuario.css">
+    <script src="./../comuns.js"></script>
     <title>Recursos Humanos</title>
   </head>
   <body>
@@ -13,7 +14,7 @@
             <label>Nome:</label>
           </td>
           <td>
-            <input type="text" name="txt_nome">
+            <input type="text" id="txt_nome" maxlength="100" required>
           </td>
         </tr>
         <tr>
@@ -21,7 +22,7 @@
             <label>Sobrenome:</label>
           </td>
           <td>
-            <input type="text" name="txt_sobrenome">
+            <input type="text" id="txt_sobrenome" maxlength="100"  required>
           </td>
         </tr>
         <tr>
@@ -29,7 +30,7 @@
             <label>CPF:</label>
           </td>
           <td>
-            <input type="text" name="txt_cpf">
+            <input type="text" id="txt_cpf" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14" required>
           </td>
         </tr>
         <tr>
@@ -37,7 +38,7 @@
             <label>Email:</label>
           </td>
           <td>
-            <input type="text" name="txt_email">
+            <input type="text" id="txt_email" maxlength="200"  required>
           </td>
         </tr>
         <tr>
@@ -45,7 +46,7 @@
             <label>Senha:</label>
           </td>
           <td>
-            <input type="password" name="txt_senha">
+            <input type="password" id="txt_senha" maxlength="100"  required>
           </td>
         </tr>
         <tr>
@@ -54,18 +55,16 @@
             <label>Setor:</label>
           </td>
           <td>
-            <select name="slt_setor">
-              <option value="0">Manutenção</option>
-              <option value="0">Recursos Humanos</option>
-              <option value="0">Contabilidade</option>
+            <select id="slt_setor">
+              <option value="1">Manutenção</option>
+              <option value="2">Recursos Humanos</option>
+              <option value="3">Contabilidade</option>
               <option value="0">Administração</option>
             </select>
           </td>
         </tr>
       </table>
-      <div id="btn_ok">
-        <a href="#">Adicionar</a>
-      </div>
+      <input type="button" id="btn_ok" value="Adicionar">
       <hr>
       <div id="container_voltar">
         <a id="btn_voltar" href="usuario.html">
@@ -75,4 +74,7 @@
      </div>
     </div>
   </body>
+  <script>
+    require('./js/addUsuario_renderer');
+  </script>
 </html>
