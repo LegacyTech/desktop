@@ -1,9 +1,10 @@
-var db = require('./../../config/db_config');
-var Vue  = require('./../../vue.js');
+var db = require('./../../config/db_config'); //Importa o banco de dados
+var Vue  = require('./../../vue.js'); //Chama a biblioteca do vue.js
 
 db.query("SELECT u.* ,  n.nome as nomeNivel FROM tbl_usuariodesktop as u INNER JOIN tbl_niveldesktop as n ON u.nivel = n.idNivel" , function( error , results , fields ){
   if(!error){
-    
+
+    //estancia o vue
     new Vue ({
       el : '#dados',
       data :

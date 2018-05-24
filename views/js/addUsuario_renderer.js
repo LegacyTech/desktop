@@ -1,4 +1,5 @@
 var db = require('./../../config/db_config');
+var md5 = require('md5');
 
 ready( function(){
 
@@ -16,6 +17,7 @@ ready( function(){
 
     if( nome != "" && sobrenome != "" && cpf != "" && email != "" && senha != "" ){
 
+      senha = md5(senha);
       let json =
       {
         'nome' : nome,
