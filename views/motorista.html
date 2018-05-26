@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/motorista.css">
+    <script src="./../comuns.js"></script>
     <title>Recursos Humanos</title>
   </head>
   <body>
@@ -11,15 +12,16 @@
         <a href="addMotorista.html">Adicionar Motorista</a>
       </div>
       <table id="tbl_motorista">
+        <thead>
         <tr>
           <th>
             Nome
           </th>
           <th>
-            Admissão
+            CPF
           </th>
           <th>
-            Telefone
+            Celular
           </th>
           <th>
             Visualizar
@@ -28,36 +30,17 @@
             Excluir
           </th>
         </tr>
-        <tr>
+        </thead>
+        <tbody id="dados">
+        <tr v-for="( motorista , index ) in motoristas">
           <td>
-            Matheus Alves de Souza
+            {{motorista.nome}}
           </td>
           <td>
-            15/01/2018
+            {{motorista.CPF}}
           </td>
           <td>
-            980197434
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/eye.png">
-            </a>
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/remove.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Matheus Alves de Souza
-          </td>
-          <td>
-            15/01/2018
-          </td>
-          <td>
-            980197434
+            {{motorista.celular}}
           </td>
           <td>
             <a href="#">
@@ -65,11 +48,12 @@
             </a>
           </td>
           <td>
-            <a href="#">
+            <a href="#" @click.prevent="remover(index)">
               <img src="./../imagens/remove.png">
             </a>
           </td>
         </tr>
+        <tbody>
       </table>
       <hr>
       <div id="container_voltar">
@@ -78,6 +62,9 @@
          <h1> Voltar </h1>
        </a>
      </div>
-    </div>
+   </div>
   </body>
+  <script>
+    require('./js/motorista_renderer')
+  </script>
 </html>

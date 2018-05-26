@@ -11,6 +11,7 @@
         <a href="addOnibus.html">Adicionar Onibus</a>
       </div>
       <table id="tbl_veiculos">
+        <thead>
         <tr>
           <th>
             Modelo
@@ -28,36 +29,17 @@
             Excluir
           </th>
         </tr>
-        <tr>
+      </thead>
+      <tbody id="dados">
+        <tr v-for="( onibus , index) in frota">
           <td>
-            Mercedes Bens V7
+            {{onibus.tipo}}
           </td>
           <td>
-            CMN-2869
+            {{onibus.placa}}
           </td>
           <td>
-            44
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/eye.png">
-            </a>
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/remove.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Mercedes Bens V7
-          </td>
-          <td>
-            CMN-2869
-          </td>
-          <td>
-            44
+            {{onibus.qntLugares}}
           </td>
           <td>
             <a href="#">
@@ -65,11 +47,12 @@
             </a>
           </td>
           <td>
-            <a href="#">
+            <a href="#" @click.prevent="remover(index)">
               <img src="./../imagens/remove.png">
             </a>
           </td>
         </tr>
+        <tbody>
       </table>
       <hr>
       <div id="container_voltar">
@@ -80,4 +63,7 @@
      </div>
     </div>
   </body>
+  <script>
+    require('./js/onibus_renderer')
+  </script>
 </html>

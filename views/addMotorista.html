@@ -1,25 +1,27 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/addMotorista.css">
+    <script src="./../comuns.js"></script>
     <title>Recursos Humanos</title>
   </head>
   <body>
     <div id="container_geral">
       <img id="logo" src="./../imagens/logo_ex.png">
       <hr>
+      <form>
       <table id="tbl_motorista">
         <tr>
           <td>
             <label>Nome:</label>
           </td>
           <td>
-            <input type="text" name="txt_nome">
+            <input type="text" id="txt_nome" maxlength="45" required>
           </td>
           <td>
             <label>Sobrenome:</label>
           </td>
           <td>
-            <input type="text" name="txt_sobrenome">
+            <input type="text" id="txt_sobrenome" maxlength="70" required>
           </td>
         </tr>
         <tr>
@@ -27,13 +29,13 @@
             <label>RG:</label>
           </td>
           <td>
-            <input type="text" name="txt_rg">
+            <input type="number" id="txt_rg" maxlength="12" onKeyDown="if(this.value.length==12) return false;" required>
           </td>
           <td>
             <label>CPF:</label>
           </td>
           <td>
-            <input type="text" name="txt_cpf">
+            <input type="text" id="txt_cpf"  onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14" required>
           </td>
         </tr>
         <tr>
@@ -41,27 +43,28 @@
             <label>CNH:</label>
           </td>
           <td>
-            <input type="text" name="txt_cnh">
+            <input type="number" id="txt_cnh"  onKeyDown="if(this.value.length==11) return false;" required>
           </td>
           <td>
             <label>Nascimento:</label>
           </td>
           <td>
-            <input type="date" name="txt_dtNasc">
+            <input type="date" id="txt_dtNasc" required>
           </td>
         </tr>
+        <!--
         <tr>
           <td>
             <label>CEP:</label>
           </td>
           <td>
-            <input type="text" name="txt_cep">
+            <input type="text" id="txt_cep">
           </td>
           <td>
             <label>Logradouro:</label>
           </td>
           <td>
-            <input type="text" name="txt_logradouro">
+            <input type="text" id="txt_logradouro">
           </td>
         </tr>
         <tr>
@@ -69,30 +72,30 @@
             <label>Bairro:</label>
           </td>
           <td>
-            <input type="text" name="txt_bairro">
+            <input type="text" id="txt_bairro">
           </td>
           <td>
             <label>Cidade:</label>
           </td>
           <td>
-            <input type="text" name="txt_cidade">
+            <input type="text" id="txt_cidade">
             <select name="slt_estado">
               <option value="0">SP</option>
             </select>
           </td>
-        </tr>
+        </tr>-->
         <tr>
           <td>
             <label>Telefone:</label>
           </td>
           <td>
-            <input type="text" name="txt_telefone">
+            <input type="text" id="txt_telefone"  onkeypress="return mask(event, this, '(##) ####-####')" maxlength="14" required>
           </td>
           <td>
             <label>Celular:</label>
           </td>
           <td>
-            <input type="text" name="txt_celular">
+            <input type="text" id="txt_celular"  onkeypress="return mask(event, this, '(##) #####-####')" maxlength="15" required>
           </td>
         </tr>
         <tr>
@@ -100,7 +103,7 @@
             <label>Email:</label>
           </td>
           <td>
-            <input type="text" name="txt_email">
+            <input type="email" id="txt_email" maxlength="70" required>
           </td>
           <td>
 
@@ -110,16 +113,18 @@
           </td>
         </tr>
       </table>
-      <div id="btn_ok">
-        <a href="#">Adicionar</a>
-      </div>
+      <input type="submit" id="btn_ok" value="Adicionar">
+    </form>
       <hr>
       <div id="container_voltar">
-        <a id="btn_voltar" href="usuario.html">
+        <a id="btn_voltar" href="motorista.html">
          <img src="./../imagens/back-arrow.png"/>
          <h1> Voltar </h1>
        </a>
      </div>
     </div>
   </body>
+  <script>
+    require('./js/addMotorista_renderer')
+  </script>
 </html>
