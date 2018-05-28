@@ -11,6 +11,7 @@
         <a href="itens.html">Itens da Manutenção</a>
       </div>
       <table id="tbl_veiculos">
+        <thead>
         <tr>
           <th>
             Modelo
@@ -25,31 +26,17 @@
             Realizar
           </th>
         </tr>
-        <tr>
+      </thead>
+      <tbody id="dados">
+        <tr v-for="( ficha , index) in fichas">
           <td>
-            Mercedes Bens V7
+            {{ficha.tipo}}
           </td>
           <td>
-            CMN-2869
+            {{ficha.placa}}
           </td>
           <td>
-            27/05/2018
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/eye.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Mercedes Bens V7
-          </td>
-          <td>
-            CMN-2869
-          </td>
-          <td>
-            27/05/2018
+            {{ficha.abertura}}
           </td>
           <td>
             <a href="#">
@@ -57,6 +44,7 @@
             </a>
           </td>
         </tr>
+      </tbody>
       </table>
       <hr>
       <div id="container_voltar">
@@ -67,4 +55,7 @@
      </div>
     </div>
   </body>
+  <script>
+    require('./js/manutencao_renderer')
+  </script>
 </html>

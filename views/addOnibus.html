@@ -1,19 +1,21 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/addOnibus.css">
+    <script src="./../comuns.js"></script>
     <title>Recursos Humanos</title>
   </head>
   <body>
     <div id="container_geral">
       <img id="logo" src="./../imagens/logo_ex.png">
       <hr>
+      <form>
       <table id="tbl_onibus">
         <tr>
           <td>
             <label>Número de fabricação:</label>
           </td>
           <td>
-            <input type="text" name="txt_numFab">
+            <input type="text" id="txt_numFab" maxlength="9" required>
           </td>
         </tr>
         <tr>
@@ -21,7 +23,7 @@
             <label>Placa:</label>
           </td>
           <td>
-            <input type="text" name="txt_placa">
+            <input type="text" id="txt_placa" onkeypress="return maskText(event, this, '###-####')" maxlength="8" required>
           </td>
         </tr>
         <tr>
@@ -29,7 +31,7 @@
             <label>Descrição:</label>
           </td>
           <td>
-            <input type="text" name="txt_desc">
+            <textarea id="txt_desc" maxlength="3000" required></textarea>
           </td>
         </tr>
         <tr>
@@ -37,17 +39,17 @@
             <label>Tipo:</label>
           </td>
           <td>
-            <select name="slt_tipo">
-              <option value="0">Tradicional</option>
-              <option value="0">Executivo</option>
-              <option value="0">Premium</option>
+            <select id="slt_tipo">
+              <option value="1">Micro Ônibus</option>
+              <option value="2">Tradicional</option>
+              <option value="3">Executivo Básico</option>
+              <option value="4">Executivo Premium</option>
             </select>
           </td>
         </tr>
       </table>
-      <div id="btn_ok">
-        <a href="#">Adicionar</a>
-      </div>
+      <input type="submit" id="btn_ok" value="Adicionar">
+    </form>
       <hr>
       <div id="container_voltar">
         <a id="btn_voltar" href="onibus.html">
@@ -57,4 +59,7 @@
      </div>
     </div>
   </body>
+  <script>
+    require('./js/addOnibus_renderer')
+  </script>
 </html>

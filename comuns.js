@@ -12,6 +12,22 @@ function mask(e, id, mask){
       else  return false;
   }
 }
+
+function maskText(e, id, mask){
+  var tecla=(window.event)?event.keyCode:e.which;
+  if((tecla!=8 && tecla!=0 && tecla != 45)){
+      mascara(id, mask);
+      return true;
+  }
+  else{
+      if (tecla==8 || tecla==0){
+          mascara(id, mask);
+          return true;
+      }
+      else  return false;
+  }
+}
+
 function mascara(id, mask){
     var i = id.value.length;
     var carac = mask.substring(i, i+1);

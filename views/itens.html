@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./css/manutencao.css">
+    <script src="./../comuns.js"></script>
     <title>Itens de Manutenção</title>
   </head>
   <body>
@@ -11,6 +12,7 @@
         <a href="addItens.html">Adicionar Item</a>
       </div>
       <table id="tbl_veiculos">
+        <thead>
         <tr>
           <th>
             Item
@@ -22,32 +24,22 @@
             Remover
           </th>
         </tr>
-        <tr>
+        </thead>
+        <tbody id="dados">
+        <tr v-for="(item , index) in itens">
           <td>
-            Balanceamento
+            {{item.item}}
           </td>
           <td>
-            15000
+            {{item.intervalo}}
           </td>
           <td>
-            <a href="#">
+            <a href="#"  @click.prevent="remover(index)">
               <img src="./../imagens/remove.png">
             </a>
           </td>
         </tr>
-        <tr>
-          <td>
-            Troca de Óleo
-          </td>
-          <td>
-            10000
-          </td>
-          <td>
-            <a href="#">
-              <img src="./../imagens/remove.png">
-            </a>
-          </td>
-        </tr>
+      </tbody>
       </table>
       <hr>
       <div id="container_voltar">
@@ -58,4 +50,7 @@
      </div>
     </div>
   </body>
+  <script>
+    require('./js/itens_renderer')
+  </script>
 </html>
