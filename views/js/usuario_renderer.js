@@ -17,8 +17,10 @@ db.query("SELECT u.* ,  n.nome as nomeNivel FROM tbl_usuariodesktop as u INNER J
       },
       methods : {
 
-        abrir( usuario ){
-          window.location.href = "./addUsuario.html?id=" + usuario.idUsuario;
+        editar(index){
+          //Inicializa a sessão
+          sessionStorage.setItem("idUsuario", this.usuarios[index].idUsuario);
+          window.location.href ="./addUsuario.html";
         },
         remover( index ){
 

@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/finalizaManutencao.css">
+    <title>Manutenção</title>
+  </head>
+  <body>
+    <div id="container_geral">
+      <img id="logo" src="./../imagens/logo_ex.png">
+      <hr>
+      <table id="tbl_manutencao">
+        <tr>
+          <th colspan="2">
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <label>Ônibus:</label>
+          </td>
+          <td>
+            <h1 id="onibus"></h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Abertura:</label>
+          </td>
+          <td>
+            <h1 id="abertura"></h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Item:</label>
+          </td>
+          <td>
+            <h1 id="item"></h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Valor Gasto:</label>
+          </td>
+          <td>
+            <input type="number" min="0" id="txt_valor">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Quilometragem atual: </label>
+          </td>
+          <td>
+            <input type="number" min="0" id="txt_km">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Observação:</label>
+          </td>
+          <td>
+            <input type="text" min="0" id="txt_obs">
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="button" id="btn_ok" value="Finalizar">
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <div id="container_voltar">
+        <a id="btn_voltar" href="manutencao.html">
+         <img src="./../imagens/back-arrow.png"/>
+         <h1> Voltar </h1>
+       </a>
+     </div>
+    </div>
+  </body>
+  <script>
+    require('./js/finalizaManutencao_renderer')
+  </script>
+</html>

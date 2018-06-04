@@ -43,7 +43,7 @@
             {{motorista.celular}}
           </td>
           <td>
-            <a href="#">
+            <a href="#" @click.prevent="editar(index)">
               <img src="./../imagens/eye.png">
             </a>
           </td>
@@ -65,6 +65,7 @@
    </div>
   </body>
   <script>
-    require('./js/motorista_renderer')
+    require('./js/motorista_renderer');
+    sessionStorage.setItem("idMotorista", 0);
   </script>
 </html>

@@ -30,7 +30,9 @@
             <label>CPF:</label>
           </td>
           <td>
-            <input type="text" id="txt_cpf" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14" required>
+            <form name="cpf">
+            <input type="text" name="cpf" id="txt_cpf" onkeypress="return mask(event, this, '###.###.###-##')" onblur="ValidarCPF(form.cpf);" maxlength="14" required>
+          </form>
           </td>
         </tr>
         <tr>
@@ -43,7 +45,7 @@
         </tr>
         <tr>
           <td>
-            <label>Senha:</label>
+            <label id="label_senha">Senha:</label>
           </td>
           <td>
             <input type="password" id="txt_senha" maxlength="100"  required>

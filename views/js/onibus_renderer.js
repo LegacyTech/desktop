@@ -19,7 +19,11 @@ db.query( sql  , function( error , results , fields){
          },
          methods :
          {
-           abrir(){},
+           editar(index){
+             //Inicializa a sessão
+             sessionStorage.setItem("idOnibus", this.frota[index].idOnibus);
+             window.location.href ="./addOnibus.html";
+           },
            remover( index ){
 
              //Verifica se o usuario deseja realmente excluir

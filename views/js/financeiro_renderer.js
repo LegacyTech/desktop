@@ -23,7 +23,7 @@ let sql = "SELECT \
             ON\
             	chegada.idPontoChegada = v.idPontoChegada\
             WHERE	\
-            	v.finalizada = 1 AND YEAR(v.dtPartida) = YEAR(CURDATE())\
+            	v.finalizada = 1 AND MONTH(v.dtPartida) = MONTH(CURDATE()) AND YEAR(v.dtPartida) = YEAR(CURDATE())\
             GROUP BY \
             	v.idViagem\
             ORDER BY\

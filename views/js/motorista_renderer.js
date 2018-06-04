@@ -17,7 +17,11 @@ db.query( sql  , function( error , results , fields){
          },
          methods :
          {
-           abrir(){},
+           editar(index){
+             //Inicializa a sessão
+             sessionStorage.setItem("idMotorista", this.motoristas[index].idMotorista);
+             window.location.href ="./addMotorista.html";
+           },
            remover( index ){
 
              //Verifica se o usuario deseja realmente excluir

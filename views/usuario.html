@@ -43,7 +43,7 @@
               {{usuario.nomeNivel}}
             </td>
             <td >
-              <a href="#">
+              <a href="#" @click.prevent="editar(index)">
                 <img src="./../imagens/eye.png">
               </a>
             </td>
@@ -65,6 +65,7 @@
     </div>
   </body>
   <script>
-    require('./js/usuario_renderer')
+    require('./js/usuario_renderer');
+    sessionStorage.setItem("idUsuario", 0);
   </script>
 </html>

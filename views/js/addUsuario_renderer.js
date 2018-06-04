@@ -3,6 +3,33 @@ var md5 = require('md5');
 
 ready( function(){
 
+  var idUsuario = sessionStorage.getItem("idUsuario");
+
+  if( idUsuario != 0 ){
+
+    document.querySelector('#btn_ok').value = "Salvar";
+    db.query("SELECT * FROM tbl_usuariodesktop WHERE idUsuario = ?" , [idUsuario], function(error , result, field){
+      if( !error ){
+        let user = result[0];
+        document.querySelector('#txt_nome').value = user.nome;
+        document.querySelector('#txt_sobrenome').value = user.sobrenome;
+        document.querySelector('#txt_cpf').value = user.cpf;
+        document.querySelector('#txt_email').value = user.email;
+        document.querySelector('#label_senha').innerHTML = 'Nova Senha:';
+
+        let select = document.getElementById('slt_setor');
+        let tipo = user.nivel;
+        var opts = select.options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+          if (opt.value == tipo) {
+            select.selectedIndex = j;
+            break;
+          }
+        }
+      }
+    });
+  }
+
   //Adiciona usuarios no banco de dados
   document.querySelector('#btn_ok').addEventListener( 'click' , function(e){
 
@@ -29,24 +56,43 @@ ready( function(){
         'ativo' : 1
       };
 
-      db.query( "INSERT INTO tbl_usuariodesktop SET ? " , json , function( error , result , fields ){
-
-        if( !error ){
-          window.location.href = "./usuario.html"; //Faz o redirecionamento
-        }else{
-          alert( "Erro ao inserir no banco de dados ! Contate o administrador. " );
-        }
-
-      });
+      if( idUsuario != 0 ){
+        updateUsuario( json , idUsuario );
+      }else{
+        addUsuario( json );
+      }
 
     }else{
 
-      alert( "Você deixou dados em branco ! " );
-
+      if( teste == true )
+        alert( "Você deixou dados em branco ! " );
+      else
+        alert( "CPF Inválido! " );
     }
-
-
-
 
   });
 });
+
+function addUsuario( json ){
+  db.query( "INSERT INTO tbl_usuariodesktop SET ? " , json , function( error , result , fields ){
+
+    if( !error ){
+      window.location.href = "./usuario.html"; //Faz o redirecionamento
+    }else{
+      alert( "Erro ao inserir no banco de dados ! Contate o administrador. " );
+    }
+
+  });
+}
+
+function updateUsuario( json , idUsuario ){
+  db.query( "UPDATE tbl_usuariodesktop SET ? WHERE idUsuario = ?" , [json , idUsuario] , function( error , result , fields ){
+
+    if( !error ){
+      window.location.href = "./usuario.html"; //Faz o redirecionamento
+    }else{
+      alert( "Erro ao inserir no banco de dados ! Contate o administrador. " );
+    }
+
+  });
+}

@@ -3,7 +3,7 @@ const mysql = require('mysql');//importando o modulo mysql
 //variavel de conexao
 var connection = mysql.createConnection({
 
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'root',
   password: 'bcd127',
   database: 'db_viacao_asteroide'
