@@ -46,6 +46,16 @@ h1{
   width: 50%;
 }
 
+#container_slt{
+    width: 30%;
+    margin: 0 auto;
+}
+
+#select_mes{
+  width: 100%;
+  border: solid 1px #ffae00;
+  text-align: center;
+}
 
 #tbl_viagens{
   width: 80%;

@@ -11,6 +11,22 @@
       <h1 id="lucro">
         Lucro em Maio : R$1018,00
       </h1>
+      <div id="container_slt">
+      <select id="select_mes">
+      	<option value="01" selected>Janeiro</option>
+      	<option value="02">Fevereiro</option>
+      	<option value="03">Março</option>
+      	<option value="04">Abril</option>
+      	<option value="05">Maio</option>
+      	<option value="06">Junho</option>
+      	<option value="07">Julho</option>
+      	<option value="08">Agosto</option>
+      	<option value="09">Setembro</option>
+      	<option value="10">Outubro</option>
+      	<option value="11">Novembro</option>
+      	<option value="12">Dezembro</option>
+      </select>
+      </div>
       <table id="tbl_viagens">
         <thead>
         <tr>
@@ -19,6 +35,9 @@
           </th>
           <th>
             Destino
+          </th>
+          <th>
+            Passagens vendidas
           </th>
           <th>
             Receitas
@@ -35,6 +54,9 @@
           </td>
           <td>
             {{viagem.destino}}
+          </td>
+          <td>
+            {{viagem.compradas}}
           </td>
           <td>
             R${{viagem.receita}}

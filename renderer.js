@@ -34,6 +34,7 @@ function autentica( cpf , senha ){
       //Inicializa a sessão
       sessionStorage.setItem("idUsuario", result[0].idUsuario);
       sessionStorage.setItem("nivel" , result[0].nivel);
+      sessionStorage.setItem('filtroMes' , 1);
 
       window.location.href = "./views/menu.html"; //Faz o redirecionamento
 
