@@ -21,7 +21,7 @@ ready( function(){
   if( idOnibus != 0 ){
 
     document.getElementById('btn_ok').value = 'Salvar';
-    let sql = "SELECT o.* , t.tipo FROM tbl_onibus as O\
+    let sql = "SELECT o.* , t.tipo FROM tbl_onibus as o\
               INNER JOIN tbl_tipoonibus as t\
               ON t.idTipoOnibus = o.idTipoOnibus\
               WHERE idOnibus = ? ";

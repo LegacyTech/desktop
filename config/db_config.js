@@ -1,12 +1,12 @@
-const mysql = require('mysql');//importando o modulo mysql
+﻿const mysql = require('mysql');//importando o modulo mysql
 
 //variavel de conexao
 var connection = mysql.createConnection({
 
-  host: '127.0.0.1',
-  user: 'root',
-  password: 'bcd127',
-  database: 'db_viacao_asteroide'
+  host: '192.168.1.1',
+  user: 'viacao_lt',
+  password: 'legacytech_bcd127',
+  database: 'dbviacaoasteroide_lt'
 
 });
 
